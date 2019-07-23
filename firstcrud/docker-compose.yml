@@ -1,0 +1,14 @@
+version: '3'
+services:
+ docker-app:
+    image: rickletras/firstcrud
+    ports:
+      - "8080:8080"
+    depends_on:
+      - crud-docker-postgres
+ crud-docker-postgres:
+    image: postgres:10.4
+    environment:
+      - POSTGRES_DB=clientes
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
